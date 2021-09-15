@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="row">
+    <div class="center">
+<!--    <p class="h3">the price of {{vehicle_name}} is ${{ price_usd }.</p>-->
+<!--    <p class="text-sm-start">the price of {{vehicle_name}} is ${{ price_usd }.</p>-->
+
+    <h2>the price of your {{vehicle_name}} is ${{ price_usd }}</h2>
+    </div>
+</div>
+{% endblock %}
+
+</body>
+</html>

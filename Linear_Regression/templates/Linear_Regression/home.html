@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<p class="fs-3">welcome to the electric car estimator using machine learning</p>
+<p class="text-sm-start">please fill the form below with numbers only</p>
+<!--<h2>welcome to the electric car price calculator</h2>-->
+<div class="row">
+    <div class="col">
+            <form action="{% url 'output' %}" method="post">
+                {% csrf_token %}
+                <select class="form-select"  aria-label="Default select example" name="vehicle_name">
+                    <option selected>Vehicle name</option>
+                    <option value="Aiways">Aiways</option>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Byton">Byton</option>
+                    <option value="Citroen">Citroen</option>
+                    <option value="CUPRA">CUPRA</option>
+                    <option value="Dacia">Dacia</option>
+                    <option value="DS">DS</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="JAC">JAC</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Lightyear">Lightyear</option>
+                    <option value="Lucid">Lucid</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Mini">Mini</option>
+                    <option value="MG">MG</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Polestar">Polestar</option>
+                    <option value="Renault">Renault</option>
+                    <option value="SEAT">SEAT</option>
+                    <option value="Seres">Seres</option>
+                    <option value="Sono">Sono</option>
+                    <option value="Smart">Smart</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volvo">Volvo</option>
+                    <option value="Volkswagen">Volkswagen</option>
+
+                </select>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Battery (Kwh)</label>
+                    <input type="text" name="battery" class="form-control" id="formGroupExampleInput"
+                           placeholder="type here...">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Acceleration (sec)</label>
+                    <input type="text" name="acceleration" class="form-control" id="formGroupExampleInput2"
+                           placeholder="type here...">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Top speed (Km/hr)</label>
+                        <input type="text" name="top_speed" class="form-control" id="formGroupExampleInput3"
+                               placeholder="type here...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Distance (Km)</label>
+                        <input type="text" name="distance" class="form-control" id="formGroupExampleInput4"
+                               placeholder="type here...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Efficiency (Wh/km)</label>
+                        <input type="text" name="efficiency" class="form-control" id="formGroupExampleInput5"
+                               placeholder="type here...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Fast Charge (Km/hr)</label>
+                        <input type="text" name="fast_charge" class="form-control" id="formGroupExampleInput6"
+                               placeholder="type here...">
+                    </div>
+                    <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

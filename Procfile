@@ -1,0 +1,1 @@
+web: gunicorn electric_vehicle_ml.wsgi

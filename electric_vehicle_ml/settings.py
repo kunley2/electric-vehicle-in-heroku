@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-$o&qz4xt15@%^xjdsp6^c-z+2p@=y)1*s7v^k26e-=o&@hrq^a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://electric-vehicle-model.herokuapp.com','localhost',
+ALLOWED_HOSTS = ['https://electric-vehicle-model.herokuapp.com',
+                 'localhost',
                  '127.0.0.1']
 
 
@@ -120,7 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATIC_URL = '/static/'
-_
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

@@ -22,17 +22,17 @@ def output(request):
     data = {'vehicle_name':vehicle_name,'acceleration':acceleration,'battery':battery,
             'top_speed':top_speed,'distance':distance,'efficiency':efficiency,'fast_charge':fast_charge}
     electric_df = pd.DataFrame(data=data,index=[0])
-    with open("C:/Users/HP/PycharmProjects/hamoye/electric vehicle/hotencoder",'rb') as file1:
+    with open("C:/Users/HP/PycharmProjects/hamoye/electric vehicle/electric vehicle web/electric_vehicle_ml/hotencoder",'rb') as file1:
         hot_encoder = pickle.load(file1)
         file1.close()
     df_try = pd.DataFrame(hot_encoder.transform(electric_df[['vehicle_name']]).toarray())
     electric_df = electric_df.join(df_try)
     electric_df.drop(columns=['vehicle_name'],inplace=True)
-    with open("C:/Users/HP/PycharmProjects/hamoye/electric vehicle/scaler",'rb') as file2:
+    with open("C:/Users/HP/PycharmProjects/hamoye/electric vehicle/electric vehicle web/electric_vehicle_ml/scaler",'rb') as file2:
         scaler = pickle.load(file2)
         file1.close()
     ml_df = scaler.transform(electric_df)
-    with open("C:/Users/HP/PycharmProjects/hamoye/electric vehicle/linear_model",'rb')as file3:
+    with open("C:/Users/HP/PycharmProjects/hamoye/electric vehicle/electric vehicle web/electric_vehicle_ml/linear_model",'rb')as file3:
         linear_model = pickle.load(file3)
         file2.close()
     price_usd = round(np.float(abs(linear_model.predict(ml_df))))

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$o&qz4xt15@%^xjdsp6^c-z+2p@=y)1*s7v^k26e-=o&@hrq^a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://electric-vehicle-model.herokuapp.com',
                  'localhost',
